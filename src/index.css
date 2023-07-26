@@ -1,13 +1,101 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(160deg, rgba(155, 195, 221, 0.5522584033613445) 28%, rgba(255, 187, 0, 0.2665441176470589) 46%, rgba(255, 255, 255, 0) 70%), var(--color-bg);
+  /* background-size: cover; */
+  /* height: 100vh; */
+  background-attachment: fixed;
 }
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 3px solid var(--color-submain);
+}
+
+body,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --color-bg: #F7F9FB;
+  --color-section: #FFFFFF;
+  --color-logo: #00A0BC;
+  --color-line: #c8c8c8;
+  --color-text: #4a4a4a;
+  --color-subtext: #CECECE;
+  --color-second-text: #FFFFFF;
+  --color-main: #9BC3DD;
+  --color-submain: #FFBB00;
+}
+
+[data-theme='dark'] {
+  --color-bg: #242424;
+  --color-section: #343434;
+  --color-logo: #00A0BC;
+  --color-line: #777777;
+  --color-text: #ffeded;
+  --color-subtext: #777777;
+  --color-second-text: #3c3c3c;
+  --color-main: #9BC3DD;
+  --color-submain: #FFBB00;
+}
+
+:root {
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+:root {
+  --fs-h6: 10px;
+  --fs-h5: 12px;
+  --fs-h4: 14px;
+  --fs-h3: 16px;
+  --fs-h2: 18px;
+  --fs-h1: 24px;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* @media (max-width: 1000px) {} */
+/* @media (max-width: 560px) {} */
