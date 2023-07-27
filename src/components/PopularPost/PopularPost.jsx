@@ -29,7 +29,10 @@ const PopularPost = ({ post }) => {
       <DivWrapper>
         <DivBoxImg>
           {post.imgUrl ? (
-            <Img src={`http://localhost:3002/${post.imgUrl}`} alt="" />
+            <Img
+              src={`https://dear-penfriend.onrender.com/${post.imgUrl}`}
+              alt=""
+            />
           ) : (
             <Img src={noPhoto} alt="" />
           )}

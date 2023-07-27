@@ -46,7 +46,7 @@ const UserInfoPage = () => {
             {user.picturePath ? (
               <UserImgBox>
                 <UserImg
-                  src={`http://localhost:3002/${user.picturePath}`}
+                  src={`https://dear-penfriend.onrender.com/${user.picturePath}`}
                   alt=""
                 />
               </UserImgBox>

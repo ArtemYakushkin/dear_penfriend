@@ -11,7 +11,7 @@ const initialState = {
 export const registerUser = createAsyncThunk(
     'auth/registerUser',
     async (values) => {
-        return fetch('http://localhost:3002/auth/register', {
+        return fetch('https://dear-penfriend.onrender.com/auth/register', {
             method: 'POST',
             headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
             body: JSON.stringify({

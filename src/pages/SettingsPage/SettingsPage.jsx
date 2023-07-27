@@ -65,7 +65,10 @@ const SettingsPage = () => {
         <DivLeft>
           <UserImgBox>
             {oldImage && (
-              <UserImg src={`http://localhost:3002/${oldImage}`} alt="" />
+              <UserImg
+                src={`https://dear-penfriend.onrender.com/${oldImage}`}
+                alt=""
+              />
             )}
             {newImage && <UserImg src={URL.createObjectURL(newImage)} alt="" />}
           </UserImgBox>

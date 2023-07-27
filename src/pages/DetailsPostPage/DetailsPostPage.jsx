@@ -121,7 +121,7 @@ const DetailsPostPage = () => {
             {post.picturePath ? (
               <UserImgBox>
                 <UserImg
-                  src={`http://localhost:3002/${post.picturePath}`}
+                  src={`https://dear-penfriend.onrender.com/${post.picturePath}`}
                   alt=""
                 />
               </UserImgBox>
@@ -148,7 +148,10 @@ const DetailsPostPage = () => {
           <ContentLeft>
             <ImgBox>
               {post.imgUrl ? (
-                <Img src={`http://localhost:3002/${post.imgUrl}`} alt="" />
+                <Img
+                  src={`https://dear-penfriend.onrender.com/${post.imgUrl}`}
+                  alt=""
+                />
               ) : (
                 <Img src={noPhoto} alt="" />
               )}
