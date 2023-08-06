@@ -5,7 +5,7 @@ import axios from 'axios';
 // });
 
 const instance = axios.create({
-    baseURL: 'https://dear-penfriend.onrender.com',
+    baseURL: 'https://localhost:3002',
 });
 
 instance.interceptors.request.use((config) => {

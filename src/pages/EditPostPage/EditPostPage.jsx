@@ -64,10 +64,7 @@ const EditPostPage = () => {
       <DivWrapper>
         <DivImg>
           {oldImage && (
-            <Img
-              src={`https://dear-penfriend.onrender.com/${oldImage}`}
-              alt=""
-            />
+            <Img src={`https://localhost:3002/${oldImage}`} alt="" />
           )}
           {newImage && <Img src={URL.createObjectURL(newImage)} alt="" />}
         </DivImg>
