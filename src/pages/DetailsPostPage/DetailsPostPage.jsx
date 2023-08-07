@@ -46,6 +46,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { removePost } from "../../redux/features/post/postSlice";
 import { toast } from "react-toastify";
+import { mainURL } from "../../utils/services";
 
 const DetailsPostPage = () => {
   const [post, setPost] = useState(null);
@@ -120,10 +121,7 @@ const DetailsPostPage = () => {
           <UserLeft>
             {post.picturePath ? (
               <UserImgBox>
-                <UserImg
-                  src={`http://localhost:3002/${post.picturePath}`}
-                  alt=""
-                />
+                <UserImg src={mainURL + `/${post.picturePath}`} alt="" />
               </UserImgBox>
             ) : (
               <UserImgBox>
@@ -148,7 +146,7 @@ const DetailsPostPage = () => {
           <ContentLeft>
             <ImgBox>
               {post.imgUrl ? (
-                <Img src={`http://localhost:3002/${post.imgUrl}`} alt="" />
+                <Img src={mainURL + `/${post.imgUrl}`} alt="" />
               ) : (
                 <Img src={noPhoto} alt="" />
               )}

@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import DarkModeMobile from "../DarkModeMobile/DarkModeMobile";
 import noAvatar from "../../image/no-avatar.png";
 import logo from "../../image/logo-light-theme.png";
+import { mainURL } from "../../utils/services";
 
 // ---------- Styled --------------------
 
@@ -188,7 +189,7 @@ const MobileMenu = ({ open, toggleMenu }) => {
                   {user ? (
                     <DivAvatar>
                       <AvatarImg
-                        src={`http://localhost:3002/${user.picturePath}`}
+                        src={mainURL + `/${user.picturePath}`}
                         alt=""
                       />
                     </DivAvatar>

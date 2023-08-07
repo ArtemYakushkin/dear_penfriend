@@ -22,6 +22,7 @@ import {
   IconBox,
   Number,
 } from "./Post.styled";
+import { mainURL } from "../../utils/services";
 
 const Post = ({ post }) => {
   const fullName = `${post.firstName} ${post.lastName}`;
@@ -38,10 +39,7 @@ const Post = ({ post }) => {
         <DivUser>
           {post.picturePath ? (
             <UserImgBox>
-              <UserImg
-                src={`http://localhost:3002/${post.picturePath}`}
-                alt=""
-              />
+              <UserImg src={mainURL + `/${post.picturePath}`} alt="" />
             </UserImgBox>
           ) : (
             <UserImgBox>
@@ -65,9 +63,7 @@ const Post = ({ post }) => {
           <Text>{post.text}</Text>
         </TextBox>
         <ImgBox>
-          {post.imgUrl && (
-            <Img src={`http://localhost:3002/${post.imgUrl}`} alt="" />
-          )}
+          {post.imgUrl && <Img src={mainURL + `/${post.imgUrl}`} alt="" />}
         </ImgBox>
       </Link>
 

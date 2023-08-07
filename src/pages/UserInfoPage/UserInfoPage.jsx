@@ -19,6 +19,7 @@ import axiosURL from "../../utils/axios";
 import noAvatar from "../../image/no-avatar-2.png";
 import { checkIsAuth } from "../../redux/features/auth/authSlice";
 import { useSelector } from "react-redux";
+import { mainURL } from "../../utils/services";
 
 const UserInfoPage = () => {
   const [user, setUser] = useState(null);
@@ -45,10 +46,7 @@ const UserInfoPage = () => {
           <DivLeft>
             {user.picturePath ? (
               <UserImgBox>
-                <UserImg
-                  src={`http://localhost:3002/${user.picturePath}`}
-                  alt=""
-                />
+                <UserImg src={mainURL + `/${user.picturePath}`} alt="" />
               </UserImgBox>
             ) : (
               <UserImgBox>

@@ -15,6 +15,7 @@ import { ContainerContent } from "../../components/ContainerContent/ContainerCon
 import { useNavigate, useParams } from "react-router-dom";
 import axiosURL from "../../utils/axios";
 import { IoPersonAdd } from "react-icons/io5";
+import { mainURL } from "../../utils/services";
 
 const SettingsPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -64,9 +65,7 @@ const SettingsPage = () => {
       <DivWrapper>
         <DivLeft>
           <UserImgBox>
-            {oldImage && (
-              <UserImg src={`http://localhost:3002/${oldImage}`} alt="" />
-            )}
+            {oldImage && <UserImg src={mainURL + `/${oldImage}`} alt="" />}
             {newImage && <UserImg src={URL.createObjectURL(newImage)} alt="" />}
           </UserImgBox>
         </DivLeft>

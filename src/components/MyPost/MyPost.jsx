@@ -16,6 +16,7 @@ import { BsEyeFill } from "react-icons/bs";
 import { FaComment } from "react-icons/fa";
 import Moment from "react-moment";
 import noPhoto from "../../image/no-photo.png";
+import { mainURL } from "../../utils/services";
 
 const MyPost = ({ post }) => {
   return (
@@ -23,10 +24,7 @@ const MyPost = ({ post }) => {
       <DivWrapper>
         <DivBoxImg>
           {post.imgUrl ? (
-            <Img
-              src={`http://localhost:3002/${post.imgUrl}`}
-              alt="post_image"
-            />
+            <Img src={mainURL + `/${post.imgUrl}`} alt="post_image" />
           ) : (
             <Img src={noPhoto} alt="post_image" />
           )}

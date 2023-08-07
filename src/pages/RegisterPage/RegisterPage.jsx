@@ -17,6 +17,7 @@ import {
 import { IoAddCircleOutline } from "react-icons/io5";
 import noPhoto from "../../image/no-photo.png";
 import axios from "axios";
+import { mainURL } from "../../utils/services";
 
 const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -41,7 +42,7 @@ const RegisterPage = () => {
     formData.append("image", picturePath);
 
     await axios
-      .post("http://localhost:3002/auth/register", formData, {
+      .post(mainURL + "/auth/register", formData, {
         headers: {
           "Content-type": "multipart/form-data",
         },

@@ -20,6 +20,7 @@ import { BsEyeFill } from "react-icons/bs";
 import { FaComment } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
+import { mainURL } from "../../utils/services";
 
 const PopularPost = ({ post }) => {
   const fullName = `${post.firstName} ${post.lastName}`;
@@ -29,7 +30,7 @@ const PopularPost = ({ post }) => {
       <DivWrapper>
         <DivBoxImg>
           {post.imgUrl ? (
-            <Img src={`http://localhost:3002/${post.imgUrl}`} alt="" />
+            <Img src={mainURL + `/${post.imgUrl}`} alt="" />
           ) : (
             <Img src={noPhoto} alt="" />
           )}

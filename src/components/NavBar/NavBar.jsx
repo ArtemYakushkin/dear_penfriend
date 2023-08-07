@@ -27,6 +27,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { checkIsAuth, logout } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
+import { mainURL } from "../../utils/services";
 
 const NavBar = () => {
   const isAuth = useSelector(checkIsAuth);
@@ -69,7 +70,7 @@ const NavBar = () => {
                     {isAuth ? (
                       <DivAvatar>
                         <AvatarImg
-                          src={`http://localhost:3002/${user.picturePath}`}
+                          src={mainURL + `/${user.picturePath}`}
                           alt=""
                         />
                       </DivAvatar>
