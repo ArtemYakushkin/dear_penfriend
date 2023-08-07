@@ -29,7 +29,7 @@ const PopularPost = ({ post }) => {
       <DivWrapper>
         <DivBoxImg>
           {post.imgUrl ? (
-            <Img src={`https://localhost:3002/${post.imgUrl}`} alt="" />
+            <Img src={`http://localhost:3002/${post.imgUrl}`} alt="" />
           ) : (
             <Img src={noPhoto} alt="" />
           )}

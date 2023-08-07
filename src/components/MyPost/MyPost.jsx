@@ -24,7 +24,7 @@ const MyPost = ({ post }) => {
         <DivBoxImg>
           {post.imgUrl ? (
             <Img
-              src={`https://localhost:3002/${post.imgUrl}`}
+              src={`http://localhost:3002/${post.imgUrl}`}
               alt="post_image"
             />
           ) : (

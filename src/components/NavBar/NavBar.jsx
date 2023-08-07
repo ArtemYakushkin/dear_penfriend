@@ -69,7 +69,7 @@ const NavBar = () => {
                     {isAuth ? (
                       <DivAvatar>
                         <AvatarImg
-                          src={`https://localhost:3002/${user.picturePath}`}
+                          src={`http://localhost:3002/${user.picturePath}`}
                           alt=""
                         />
                       </DivAvatar>

@@ -46,7 +46,7 @@ const UserInfoPage = () => {
             {user.picturePath ? (
               <UserImgBox>
                 <UserImg
-                  src={`https://localhost:3002/${user.picturePath}`}
+                  src={`http://localhost:3002/${user.picturePath}`}
                   alt=""
                 />
               </UserImgBox>

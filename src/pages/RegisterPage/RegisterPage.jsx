@@ -41,7 +41,7 @@ const RegisterPage = () => {
     formData.append("image", picturePath);
 
     await axios
-      .post("https://localhost:3002/auth/register", formData, {
+      .post("http://localhost:3002/auth/register", formData, {
         headers: {
           "Content-type": "multipart/form-data",
         },

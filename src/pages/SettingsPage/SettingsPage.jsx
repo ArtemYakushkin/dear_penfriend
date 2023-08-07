@@ -65,7 +65,7 @@ const SettingsPage = () => {
         <DivLeft>
           <UserImgBox>
             {oldImage && (
-              <UserImg src={`https://localhost:3002/${oldImage}`} alt="" />
+              <UserImg src={`http://localhost:3002/${oldImage}`} alt="" />
             )}
             {newImage && <UserImg src={URL.createObjectURL(newImage)} alt="" />}
           </UserImgBox>

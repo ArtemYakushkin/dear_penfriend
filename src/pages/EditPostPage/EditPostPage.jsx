@@ -63,9 +63,7 @@ const EditPostPage = () => {
     <ContainerContent>
       <DivWrapper>
         <DivImg>
-          {oldImage && (
-            <Img src={`https://localhost:3002/${oldImage}`} alt="" />
-          )}
+          {oldImage && <Img src={`http://localhost:3002/${oldImage}`} alt="" />}
           {newImage && <Img src={URL.createObjectURL(newImage)} alt="" />}
         </DivImg>
         <Form onSubmit={(e) => e.preventDefault()}>

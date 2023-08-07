@@ -39,7 +39,7 @@ const Post = ({ post }) => {
           {post.picturePath ? (
             <UserImgBox>
               <UserImg
-                src={`https://localhost:3002/${post.picturePath}`}
+                src={`http://localhost:3002/${post.picturePath}`}
                 alt=""
               />
             </UserImgBox>
@@ -66,7 +66,7 @@ const Post = ({ post }) => {
         </TextBox>
         <ImgBox>
           {post.imgUrl && (
-            <Img src={`https://localhost:3002/${post.imgUrl}`} alt="" />
+            <Img src={`http://localhost:3002/${post.imgUrl}`} alt="" />
           )}
         </ImgBox>
       </Link>
