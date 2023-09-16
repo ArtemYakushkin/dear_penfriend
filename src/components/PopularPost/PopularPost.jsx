@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import Moment from "react-moment";
+import { BsEyeFill } from "react-icons/bs";
+import { FaComment } from "react-icons/fa";
 import {
   DivWrapper,
   Line,
@@ -15,12 +19,8 @@ import {
   IconBox,
   Number,
 } from "./PopularPost.styled";
-import noPhoto from "../../image/no-photo.png";
-import { BsEyeFill } from "react-icons/bs";
-import { FaComment } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import Moment from "react-moment";
 import { mainURL } from "../../utils/services";
+import noPhoto from "../../image/no-photo.png";
 
 const PopularPost = ({ post }) => {
   const fullName = `${post.firstName} ${post.lastName}`;

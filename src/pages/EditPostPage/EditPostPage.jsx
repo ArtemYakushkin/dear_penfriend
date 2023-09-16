@@ -1,3 +1,7 @@
+import { useState, useEffect, useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { IoAddCircleOutline } from "react-icons/io5";
 import {
   DivWrapper,
   DivImg,
@@ -12,11 +16,7 @@ import {
   Btn,
   BtnCancel,
 } from "./EditPostPage.styled";
-import { IoAddCircleOutline } from "react-icons/io5";
 import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
-import { useState, useEffect, useCallback } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
 import axiosURL from "../../utils/axios";
 import { updatePost } from "../../redux/features/post/postSlice";
 import { mainURL } from "../../utils/services";

@@ -1,7 +1,7 @@
-import { SearchWrapp, Form, Input, IconWrapp } from "./Search.styled";
-import { Container } from "../Container/Container.styled";
-import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import { AiOutlineSearch } from "react-icons/ai";
+import { Container } from "../Container/Container.styled";
+import { SearchWrapp, Form, Input, IconWrapp } from "./Search.styled";
 import { checkIsAuth } from "../../redux/features/auth/authSlice";
 
 const Search = ({ value, onChangeFilter }) => {

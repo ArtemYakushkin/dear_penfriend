@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { IoAddCircleOutline } from "react-icons/io5";
 import {
   DivWrapper,
   DivImg,
@@ -10,13 +14,9 @@ import {
   Textarea,
   Btn,
 } from "./AddPostPage.styled";
-import { IoAddCircleOutline } from "react-icons/io5";
-import noPhoto from "../../image/no-photo.png";
 import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { createPost } from "../../redux/features/post/postSlice";
+import noPhoto from "../../image/no-photo.png";
 
 const AddPostPage = () => {
   const [title, setTitle] = useState("");

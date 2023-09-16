@@ -259,7 +259,7 @@ export const TextBox = styled.div`
 
 export const Text = styled.p`
   font-weight: var(--fw-regular);
-  font-size: var(--fs-h5);
+  font-size: var(--fs-h4);
   line-height: 150%;
   color: var(--color-text);
 `;

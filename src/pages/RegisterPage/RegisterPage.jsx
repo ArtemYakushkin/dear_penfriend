@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
 import {
   DivWrapper,
@@ -7,17 +9,16 @@ import {
   Title,
   Input,
   DivWrappAvatar,
-  DivBoxAvatar,
+  // DivBoxAvatar,
   DivBoxInput,
-  DivAvatar,
-  AvatarImg,
-  Label,
+  // DivAvatar,
+  // AvatarImg,
+  // Label,
   BtnLogin,
 } from "./RegisterPage.styled";
-import { IoAddCircleOutline } from "react-icons/io5";
-import noPhoto from "../../image/no-photo.png";
-import axios from "axios";
 import { mainURL } from "../../utils/services";
+// import { IoAddCircleOutline } from "react-icons/io5";
+// import noPhoto from "../../image/no-photo.png";
 
 const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -27,37 +28,56 @@ const RegisterPage = () => {
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [picturePath, setPicturePath] = useState("");
+  // const [picturePath, setPicturePath] = useState("");
+  const navigate = useNavigate();
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-    formData.append("firstName", firstName);
-    formData.append("lastName", lastName);
-    formData.append("occupation", occupation);
-    formData.append("location", location);
-    formData.append("age", age);
-    formData.append("email", email);
-    formData.append("password", password);
-    formData.append("image", picturePath);
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  // const formData = new FormData();
+  // formData.append("firstName", firstName);
+  // formData.append("lastName", lastName);
+  // formData.append("occupation", occupation);
+  // formData.append("location", location);
+  // formData.append("age", age);
+  // formData.append("email", email);
+  // formData.append("password", password);
+  // formData.append("image", picturePath);
 
+  //   await axios
+  //     .post(mainURL + "/auth/register", formData, {
+  //       headers: {
+  //         "Content-type": "multipart/form-data",
+  //       },
+  //     })
+  //     .then((res) => res.data)
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  //   navigate("/login");
+  // };
+
+  const handleSubmit = async () => {
     await axios
-      .post(mainURL + "/auth/register", formData, {
-        headers: {
-          "Content-type": "multipart/form-data",
-        },
+      .post(mainURL + "/auth/register", {
+        email,
+        password,
+        firstName,
+        lastName,
+        age,
+        occupation,
+        location,
       })
       .then((res) => res.data)
       .catch((err) => {
         console.log(err);
       });
-    window.location.replace("/login");
+    navigate("/login");
   };
 
   return (
     <ContainerContent>
       <DivWrapper>
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={(e) => e.preventDefault()}>
           <Title>Registration</Title>
           <Line />
           <Input
@@ -77,7 +97,7 @@ const RegisterPage = () => {
           />
           <Line />
           <DivWrappAvatar>
-            <DivBoxAvatar>
+            {/* <DivBoxAvatar>
               {picturePath ? (
                 <DivAvatar>
                   <AvatarImg src={URL.createObjectURL(picturePath)} alt="" />
@@ -97,7 +117,7 @@ const RegisterPage = () => {
                 style={{ display: "none" }}
                 onChange={(e) => setPicturePath(e.target.files[0])}
               />
-            </DivBoxAvatar>
+            </DivBoxAvatar> */}
             <DivBoxInput>
               <Input
                 placeholder="Age"
@@ -141,7 +161,9 @@ const RegisterPage = () => {
             name="password"
           />
           <Line />
-          <BtnLogin type="submit">SIGN UP</BtnLogin>
+          <BtnLogin type="submit" onClick={handleSubmit}>
+            REGISTER
+          </BtnLogin>
         </Form>
       </DivWrapper>
     </ContainerContent>

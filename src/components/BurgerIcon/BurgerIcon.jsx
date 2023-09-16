@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { useState } from "react";
+import styled from "styled-components";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 const StyledBurger = styled.div`

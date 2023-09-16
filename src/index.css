@@ -55,11 +55,12 @@ a {
 
 :root {
   --color-bg: #F7F9FB;
-  --color-section: #FFFFFF;
+  --color-section: #fcf8f8;
   --color-logo: #00A0BC;
   --color-line: #c8c8c8;
   --color-text: #4a4a4a;
   --color-subtext: #CECECE;
+  --color-text2: #202020;
   --color-second-text: #FFFFFF;
   --color-main: #9BC3DD;
   --color-submain: #FFBB00;
@@ -71,6 +72,7 @@ a {
   --color-logo: #00A0BC;
   --color-line: #777777;
   --color-text: #ffeded;
+  --color-text2: #ffffff;
   --color-subtext: #777777;
   --color-second-text: #3c3c3c;
   --color-main: #9BC3DD;

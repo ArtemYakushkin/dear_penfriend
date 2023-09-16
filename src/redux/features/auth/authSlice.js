@@ -8,25 +8,28 @@ const initialState = {
     status: null,
 };
 
-export const registerUser = createAsyncThunk(
-    'auth/registerUser',
-    async (values) => {
-        return fetch('https://dear-penfriend.onrender.com/auth/register', {
-            method: 'POST',
-            headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                firstName: values.firstName,
-                lastName: values.lastName,
-                email: values.email,
-                password: values.password,
-                picturePath: values.picturePath,
-                location: values.location,
-                occupation: values.occupation,
-                age: values.age,
-            })
-        }).then((res) => res.json())
-    },
-);
+// export const registerUser = createAsyncThunk(
+//     'auth/registerUser',
+//     async ({ firstName, lastName, username, password, location, occupation, age }) => {
+//         try {
+//             const { data } = await axios.post('/auth/register', {
+//                 firstName,
+//                 lastName,
+//                 username,
+//                 password,
+//                 location,
+//                 occupation,
+//                 age,
+//             })
+//             if (data.token) {
+//                 window.localStorage.setItem('token', data.token)
+//             }
+//             return data
+//         } catch (error) {
+//             console.log(error)
+//         }
+//     },
+// )
 
 
 export const loginUser = createAsyncThunk(
@@ -70,20 +73,20 @@ export const authSlice = createSlice({
     },
     extraReducers: {
         // Register user
-        [registerUser.pending]: (state) => {
-            state.isLoading = true
-            state.status = null
-        },
-        [registerUser.fulfilled]: (state, action) => {
-            state.isLoading = false
-            state.status = action.payload.message
-            state.user = action.payload.user
-            state.token = action.payload.token
-        },
-        [registerUser.rejected]: (state, action) => {
-            state.status = action.payload.message
-            state.isLoading = false
-        },
+        // [registerUser.pending]: (state) => {
+        //     state.isLoading = true
+        //     state.status = null
+        // },
+        // [registerUser.fulfilled]: (state, action) => {
+        //     state.isLoading = false
+        //     state.status = action.payload.message
+        //     state.user = action.payload.user
+        //     state.token = action.payload.token
+        // },
+        // [registerUser.rejectWithValue]: (state, action) => {
+        //     state.status = action.payload.message
+        //     state.isLoading = false
+        // },
         // Login user
         [loginUser.pending]: (state) => {
             state.isLoading = true
@@ -119,6 +122,6 @@ export const authSlice = createSlice({
 
 export const checkIsAuth = (state) => Boolean(state.auth.token);
 
-export const { logout } = authSlice.actions;
+export const { logout, register } = authSlice.actions;
 
 export default authSlice.reducer;

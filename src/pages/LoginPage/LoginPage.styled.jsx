@@ -98,8 +98,6 @@ export const BtnSwitch = styled.p`
 
   &:hover {
     border-bottom: 1px solid var(--color-submain);
-    /* border-bottom: 1px solid var(--color-main); */
-    /* color: var(--color-main); */
   }
 `;
 

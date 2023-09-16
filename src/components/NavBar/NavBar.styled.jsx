@@ -16,6 +16,10 @@ export const AuthDiv = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 40px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 export const AuthBtn = styled(NavLink)`
@@ -107,6 +111,7 @@ export const DivPersonal = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 15px;
+  cursor: pointer;
 `;
 
 export const DivUser = styled.div`
@@ -116,19 +121,52 @@ export const DivUser = styled.div`
   gap: 15px;
 `;
 
-export const DivAvatar = styled.div`
-  display: inline-block;
+export const DivInitials = styled.div`
+  position: relative;
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  overflow: hidden;
+  background-color: var(--color-submain);
+  border: 2px solid var(--color-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const AvatarImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+export const InitialText = styled.p`
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  color: var(--color-text);
 `;
+
+export const DivSetting = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: -7px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-submain);
+  border: 2px solid var(--color-main);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+// export const DivAvatar = styled.div`
+//   display: inline-block;
+//   width: 42px;
+//   height: 42px;
+//   border-radius: 50%;
+//   overflow: hidden;
+// `;
+
+// export const AvatarImg = styled.img`
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// `;
 
 export const UserText = styled.p`
   font-weight: var(--fw-medium);

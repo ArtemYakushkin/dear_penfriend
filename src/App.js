@@ -13,7 +13,7 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import PopularPostsPage from './pages/PopularPostsPage/PopularPostsPage';
 import UserInfoPage from './pages/UserInfoPage/UserInfoPage';
 import SettingsPage from './pages/SettingsPage/SettingsPage';
-import About from './pages/About/About';
+import AboutPage from './pages/AboutPage/AboutPage';
 import { useEffect } from 'react';
 import { getMe } from './redux/features/auth/authSlice';
 
@@ -37,7 +37,7 @@ function App() {
         <Route path='popular' element={<PopularPostsPage />} />
         <Route path='user/:id' element={<UserInfoPage />} />
         <Route path='settings/:id' element={<SettingsPage />} />
-        <Route path='about' element={<About />} />
+        <Route path='about' element={<AboutPage />} />
       </Routes>
       <ToastContainer position="top-right" />
     </Layout>

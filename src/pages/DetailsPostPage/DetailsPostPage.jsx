@@ -1,27 +1,21 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { IoIosArrowBack, IoIosTrash, IoMdCreate } from "react-icons/io";
-import { AiOutlineComment } from "react-icons/ai";
-import noAvatar from "../../image/no-avatar.png";
-import noPhoto from "../../image/no-photo.png";
 import Moment from "react-moment";
-import Comments from "../../components/Comments/Comments";
-import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
-import { Loader } from "../../components/Loader/Loader.styled";
-import axiosURL from "../../utils/axios";
+import { IoIosArrowBack } from "react-icons/io";
+import { AiOutlineComment } from "react-icons/ai";
 import {
   DivLoader,
   DivWrapper,
   DivLine,
   BtnBox,
   BtnLeft,
-  BtnRight,
+  // BtnRight,
   IconBox,
   BtnText,
-  CorrectBox,
-  DeleteBox,
-  IconBoxDelete,
-  BtnTextDelete,
+  // CorrectBox,
+  // DeleteBox,
+  // IconBoxDelete,
+  // BtnTextDelete,
   UserBox,
   UserLeft,
   UserImgBox,
@@ -43,17 +37,24 @@ import {
   Number,
   CommentsBox,
 } from "./DetailsPostPage.styled";
-import { useSelector, useDispatch } from "react-redux";
-import { removePost } from "../../redux/features/post/postSlice";
-import { toast } from "react-toastify";
+import Comments from "../../components/Comments/Comments";
+import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
+import { Loader } from "../../components/Loader/Loader.styled";
+import axiosURL from "../../utils/axios";
 import { mainURL } from "../../utils/services";
+import noAvatar from "../../image/no-avatar.png";
+import noPhoto from "../../image/no-photo.png";
+// import { useSelector, useDispatch } from "react-redux";
+// import { removePost } from "../../redux/features/post/postSlice";
+// import { toast } from "react-toastify";
+// import { IoIosTrash, IoMdCreate } from "react-icons/io";
 
 const DetailsPostPage = () => {
   const [post, setPost] = useState(null);
   const navigate = useNavigate();
   const params = useParams();
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
+  // const dispatch = useDispatch();
+  // const { user } = useSelector((state) => state.auth);
 
   const fetchPost = useCallback(async () => {
     const { data } = await axiosURL.get(`/posts/${params.id}`);
@@ -74,15 +75,15 @@ const DetailsPostPage = () => {
     );
   }
 
-  const removePostHandler = () => {
-    try {
-      dispatch(removePost(params.id));
-      toast("The post has been deleted.");
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const removePostHandler = () => {
+  //   try {
+  //     dispatch(removePost(params.id));
+  //     toast("The post has been deleted.");
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <ContainerContent>
@@ -95,7 +96,7 @@ const DetailsPostPage = () => {
             <BtnText>Go Back</BtnText>
           </BtnLeft>
 
-          {user?._id === post.author && (
+          {/* {user?._id === post.author && (
             <BtnRight>
               <Link to={`/${params.id}/edit`}>
                 <CorrectBox>
@@ -112,7 +113,7 @@ const DetailsPostPage = () => {
                 <BtnTextDelete>Delete</BtnTextDelete>
               </DeleteBox>
             </BtnRight>
-          )}
+          )} */}
         </BtnBox>
 
         <DivLine></DivLine>

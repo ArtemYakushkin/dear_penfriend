@@ -1,29 +1,53 @@
+import { useState } from "react";
+import Moment from "react-moment";
 import {
   DivWrapper,
+  DivInitialBox,
   Line,
-  DivUser,
+  DivInitials,
+  InitialText,
+  DivUserBox,
+  DivUserName,
   UserName,
+  UserOccupation,
   DivDate,
   Text,
 } from "./CommentDetails.styled";
-import Moment from "react-moment";
+import Modal from "../Modal/Modal";
 
 const CommentDetails = ({ cmt }) => {
   const fullname = `${cmt.firstName} ${cmt.lastName}`;
+  const [open, setOpen] = useState(false);
 
   return (
-    <DivWrapper>
-      <DivUser>
-        <UserName>{fullname}</UserName>
-        <DivDate>
-          <Moment className="commentDate" date={cmt.createdAt} format="LLL" />
-        </DivDate>
-      </DivUser>
-      <div>
+    <>
+      <DivWrapper>
+        <DivUserBox>
+          <DivInitialBox>
+            <DivInitials
+              onClick={() => {
+                setOpen(true);
+              }}
+            >
+              <InitialText>
+                {cmt.firstName.trim().toUpperCase().split("").slice(0, 1)}
+                {cmt.lastName.trim().toUpperCase().split("").slice(0, 1)}
+              </InitialText>
+            </DivInitials>
+            <DivUserName>
+              <UserName>{fullname}</UserName>
+              <UserOccupation>{cmt.occupation}</UserOccupation>
+            </DivUserName>
+          </DivInitialBox>
+          <DivDate>
+            <Moment className="commentDate" date={cmt.createdAt} format="LLL" />
+          </DivDate>
+        </DivUserBox>
         <Text>{cmt.comment}</Text>
-      </div>
+      </DivWrapper>
       <Line />
-    </DivWrapper>
+      {open && <Modal cmt={cmt} closeModal={setOpen} open={open} />}
+    </>
   );
 };
 

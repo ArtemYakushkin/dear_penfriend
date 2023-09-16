@@ -1,3 +1,5 @@
+import { useState, useEffect, useCallback } from "react";
+import { useParams } from "react-router-dom";
 import {
   DivWrapper,
   DivLeft,
@@ -13,13 +15,11 @@ import {
   NoPostText,
 } from "./UserInfoPage.styled";
 import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
-import { useState, useEffect, useCallback } from "react";
-import { useParams } from "react-router-dom";
-import axiosURL from "../../utils/axios";
-import noAvatar from "../../image/no-avatar-2.png";
 import { checkIsAuth } from "../../redux/features/auth/authSlice";
 import { useSelector } from "react-redux";
 import { mainURL } from "../../utils/services";
+import axiosURL from "../../utils/axios";
+import noAvatar from "../../image/no-avatar-2.png";
 
 const UserInfoPage = () => {
   const [user, setUser] = useState(null);

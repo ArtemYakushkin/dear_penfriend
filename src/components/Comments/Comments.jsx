@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import {
   DivWrapper,
   Form,
@@ -9,13 +10,12 @@ import {
   DivComWrapp,
   NoCommentText,
 } from "./Comments.styled";
-import { useParams } from "react-router-dom";
 import {
   createComment,
   getPostComments,
 } from "../../redux/features/comment/commentSlice";
-import CommentDetails from "../CommentDetails/CommentDetails";
 import { checkIsAuth } from "../../redux/features/auth/authSlice";
+import CommentDetails from "../CommentDetails/CommentDetails";
 
 const Comments = () => {
   const [comment, setComment] = useState("");

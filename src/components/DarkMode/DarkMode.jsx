@@ -1,5 +1,4 @@
 import "./darkMode.css";
-// import { BsEmojiSunglassesFill, BsFillMoonStarsFill } from "react-icons/bs";
 import { ReactComponent as Sun } from "../../image/Sun.svg";
 import { ReactComponent as Moon } from "../../image/Moon.svg";
 

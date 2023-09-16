@@ -1,8 +1,11 @@
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Container } from "../Container/Container.styled";
-import logo from "../../image/logo-light-theme.png";
-import noAvatar from "../../image/no-avatar.png";
+import { toast } from "react-toastify";
 import { IoExitOutline } from "react-icons/io5";
+import { AiOutlineSetting } from "react-icons/ai";
+import { checkIsAuth, logout } from "../../redux/features/auth/authSlice";
+import { Container } from "../Container/Container.styled";
 import DarkMode from "../DarkMode/DarkMode";
 import BurgerIcon from "../BurgerIcon/BurgerIcon";
 import {
@@ -18,16 +21,17 @@ import {
   DivRight,
   DivPersonal,
   DivUser,
-  DivAvatar,
-  AvatarImg,
+  DivInitials,
+  InitialText,
+  DivSetting,
+  // DivAvatar,
+  // AvatarImg,
   UserText,
   BtnLogOut,
 } from "./NavBar.styled";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { checkIsAuth, logout } from "../../redux/features/auth/authSlice";
-import { toast } from "react-toastify";
-import { mainURL } from "../../utils/services";
+import logo from "../../image/logo-light-theme.png";
+// import noAvatar from "../../image/no-avatar.png";
+// import { mainURL } from "../../utils/services";
 
 const NavBar = () => {
   const isAuth = useSelector(checkIsAuth);
@@ -52,15 +56,19 @@ const NavBar = () => {
               <LogoText>Dear Penfriend</LogoText>
             </LogoDiv>
           </Link>
-          {isAuth && (
-            <NavItemDiv>
-              <NavItem to={"/about"}>About</NavItem>
-              <NavItem to={"/"}>Main</NavItem>
-              <NavItem to={"/posts"}>My posts</NavItem>
-              <NavItem to={"/new"}>Add post</NavItem>
-              <NavItem to={"/popular"}>Popular posts</NavItem>
-            </NavItemDiv>
-          )}
+
+          <NavItemDiv>
+            <NavItem to={"/"}>Main</NavItem>
+            {isAuth && (
+              <>
+                {/* <NavItem to={"/posts"}>My posts</NavItem> */}
+                {/* <NavItem to={"/new"}>Add post</NavItem> */}
+                <NavItem to={"/popular"}>Popular posts</NavItem>
+              </>
+            )}
+            <NavItem to={"/about"}>About</NavItem>
+          </NavItemDiv>
+
           {isAuth ? (
             <DivRight>
               <DarkMode />
@@ -68,6 +76,27 @@ const NavBar = () => {
                 <DivPersonal>
                   <DivUser>
                     {isAuth ? (
+                      <DivInitials>
+                        <DivSetting>
+                          <AiOutlineSetting size={14} />
+                        </DivSetting>
+                        <InitialText>
+                          {user.firstName
+                            .trim()
+                            .toUpperCase()
+                            .split("")
+                            .slice(0, 1)}
+                          {user.lastName
+                            .trim()
+                            .toUpperCase()
+                            .split("")
+                            .slice(0, 1)}
+                        </InitialText>
+                      </DivInitials>
+                    ) : (
+                      <UserText>AB</UserText>
+                    )}
+                    {/* {isAuth ? (
                       <DivAvatar>
                         <AvatarImg
                           src={mainURL + `/${user.picturePath}`}
@@ -78,7 +107,7 @@ const NavBar = () => {
                       <DivAvatar>
                         <AvatarImg src={noAvatar} alt="" />
                       </DivAvatar>
-                    )}
+                    )} */}
                     {isAuth ? (
                       <UserText>{user.firstName}</UserText>
                     ) : (
@@ -96,7 +125,7 @@ const NavBar = () => {
               <AuthBtn to={"/login"}>Come In</AuthBtn>
             </AuthDiv>
           )}
-          {isAuth && <BurgerIcon />}
+          <BurgerIcon />
         </NavDiv>
       </Container>
     </HeaderWrapp>

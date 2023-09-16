@@ -1,7 +1,6 @@
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { AiOutlineComment, AiOutlineEye } from "react-icons/ai";
-import noAvatar from "../../image/no-avatar.png";
 import {
   DivWrapper,
   DivLine,
@@ -22,6 +21,7 @@ import {
   IconBox,
   Number,
 } from "./Post.styled";
+import noAvatar from "../../image/no-avatar.png";
 import { mainURL } from "../../utils/services";
 
 const Post = ({ post }) => {
@@ -35,23 +35,23 @@ const Post = ({ post }) => {
 
       <DivLine></DivLine>
 
-      <Link to={`user/${post.author}`}>
-        <DivUser>
-          {post.picturePath ? (
-            <UserImgBox>
-              <UserImg src={mainURL + `/${post.picturePath}`} alt="" />
-            </UserImgBox>
-          ) : (
-            <UserImgBox>
-              <UserImg src={noAvatar} alt="" />
-            </UserImgBox>
-          )}
-          <div>
-            <UserName>{fullName}</UserName>
-            <UserOccupation>{post.occupation}</UserOccupation>
-          </div>
-        </DivUser>
-      </Link>
+      {/* <Link to={`user/${post.author}`}> */}
+      <DivUser>
+        {post.picturePath ? (
+          <UserImgBox>
+            <UserImg src={mainURL + `/${post.picturePath}`} alt="" />
+          </UserImgBox>
+        ) : (
+          <UserImgBox>
+            <UserImg src={noAvatar} alt="" />
+          </UserImgBox>
+        )}
+        <div>
+          <UserName>{fullName}</UserName>
+          <UserOccupation>{post.occupation}</UserOccupation>
+        </div>
+      </DivUser>
+      {/* </Link> */}
 
       <DivLine></DivLine>
 

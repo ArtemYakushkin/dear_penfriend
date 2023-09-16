@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getAllPosts } from "../../redux/features/post/postSlice";
 import { DivWrapper, DivLoader } from "./PopularPostsPage.styled";
 import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
 import { Loader } from "../../components/Loader/Loader.styled";
 import PopularPost from "../../components/PopularPost/PopularPost";
+import { getAllPosts } from "../../redux/features/post/postSlice";
 
 const PopularPostsPage = () => {
   const popularPosts = useSelector((state) => state.post.popularPosts);

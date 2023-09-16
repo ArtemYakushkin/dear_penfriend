@@ -1,1 +1,1 @@
-export const mainURL = 'http://localhost:3002';
+export const mainURL = 'https://dear-penfriend.onrender.com';

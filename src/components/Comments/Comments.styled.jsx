@@ -76,7 +76,6 @@ export const Btn = styled.button`
 `;
 
 export const DivComWrapp = styled.div`
-  padding: 0 15px;
   display: flex;
   flex-direction: column;
   gap: 20px;

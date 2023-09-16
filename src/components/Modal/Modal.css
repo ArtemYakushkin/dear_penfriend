@@ -1,0 +1,130 @@
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.window {
+    width: 500px;
+    background-color: var(--color-section);
+    border-radius: 4px;
+    border: 2px solid var(--color-main);
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    padding: 20px;
+    transform: scale(0.5);
+    transition: 0.4s all;
+}
+
+.window.open {
+    transform: scale(1);
+}
+
+.modal-close-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.modal-close-btn {
+    width: 25px;
+    height: 25px;
+    color: var(--color-line);
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    color: var(--color-submain);
+}
+
+.modal-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-line);
+}
+
+.modal-title {
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-h2);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.modal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.modal-item::before {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--color-line);
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.modal-item-base {
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-h4);
+    line-height: 2.14;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    order: -1;
+}
+
+.modal-item-text {
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-h4);
+    line-height: 2.14;
+    letter-spacing: 0.02em;
+    color: var(--color-logo);
+}
+
+@media (max-width: 560px) {
+    .window {
+        width: 300px;
+        padding: 8px;
+    }
+
+    .modal-list {
+        gap: 8px;
+    }
+
+    .modal-item::before {
+        content: "";
+        display: none;
+    }
+
+    .modal-item-text {
+        font-size: var(--fs-h5);
+    }
+}

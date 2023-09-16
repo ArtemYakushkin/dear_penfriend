@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { loginUser, checkIsAuth } from "../../redux/features/auth/authSlice";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
 import {
   DivWrapper,
   Form,
@@ -16,6 +14,8 @@ import {
   BtnSwitch,
   Span,
 } from "./LoginPage.styled";
+import { loginUser, checkIsAuth } from "../../redux/features/auth/authSlice";
+import { ContainerContent } from "../../components/ContainerContent/ContainerContent.styled";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -67,12 +67,13 @@ const LoginPage = () => {
           />
           <Line />
           <BtnLogin type="submit" onClick={handleSubmit}>
-            SIGN IN
+            LOGIN
           </BtnLogin>
           <DivSwitch>
             <Link to={"/register"}>
               <BtnSwitch>
-                Don’t have an account? <Span className="loginLog">Sign Up</Span>
+                Don’t have an account?
+                <Span className="loginLog">Register</Span>
               </BtnSwitch>
             </Link>
           </DivSwitch>

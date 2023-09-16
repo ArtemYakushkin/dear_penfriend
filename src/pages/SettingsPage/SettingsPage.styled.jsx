@@ -1,67 +1,93 @@
 import styled from "styled-components";
 
+// export const DivWrapper = styled.div`
+//   background-color: var(--color-section);
+//   border-radius: 4px;
+//   display: flex;
+//   align-items: center;
+//   gap: 20px;
+//   padding: 20px;
+//   width: 100%;
+
+//   @media (max-width: 560px) {
+//     flex-direction: column;
+//   }
+// `;
+
+// export const DivLeft = styled.div`
+//   width: 50%;
+//   height: 450px;
+
+//   @media (max-width: 1000px) {
+//     height: 350px;
+//   }
+
+//   @media (max-width: 560px) {
+//     width: 100%;
+//     height: 250px;
+//   }
+// `;
+
+// export const UserImgBox = styled.div`
+//   background-size: cover;
+//   border-radius: 20px;
+//   width: 100%;
+//   height: 450px;
+//   overflow: hidden;
+
+//   @media (max-width: 1000px) {
+//     height: 350px;
+//   }
+
+//   @media (max-width: 560px) {
+//     height: 250px;
+//   }
+// `;
+
+// export const UserImg = styled.img`
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// `;
+
+// export const DivRight = styled.div`
+//   width: 100%;
+
+//   @media (max-width: 560px) {
+//     width: 100%;
+//   }
+// `;
+
 export const DivWrapper = styled.div`
-  background-color: var(--color-section);
-  border-radius: 4px;
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-
-  @media (max-width: 560px) {
-    flex-direction: column;
-  }
-`;
-
-export const DivLeft = styled.div`
-  width: 50%;
-  height: 450px;
-
-  @media (max-width: 1000px) {
-    height: 350px;
-  }
-
-  @media (max-width: 560px) {
-    width: 100%;
-    height: 250px;
-  }
-`;
-
-export const UserImgBox = styled.div`
-  background-size: cover;
-  border-radius: 20px;
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-
-  @media (max-width: 1000px) {
-    height: 350px;
-  }
-
-  @media (max-width: 560px) {
-    height: 250px;
-  }
-`;
-
-export const UserImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-export const DivRight = styled.div`
-  width: 50%;
-
-  @media (max-width: 560px) {
-    width: 100%;
-  }
+  justify-content: center;
 `;
 
 export const Form = styled.form`
+  width: 50%;
+  border-radius: 4px;
+  background-color: var(--color-section);
+  padding: 20px 20px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
+
+  @media (max-width: 1000px) {
+    width: 65%;
+  }
+
+  @media (max-width: 560px) {
+    width: 100%;
+  }
+`;
+
+export const Title = styled.p`
+  padding: 0 0 20px 0;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-h2);
+  color: var(--color-text);
 `;
 
 export const Label = styled.label`
@@ -90,8 +116,8 @@ export const Input = styled.input`
   border: none;
   padding: 0 20px;
   font-family: "Rubik", sans-serif;
-  font-weight: var(--fw-regular);
-  font-size: var(--fs-h5);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-h4);
   color: var(--color-text);
   margin: 5px 0;
   background-color: transparent;
@@ -110,6 +136,12 @@ export const Input = styled.input`
   }
 `;
 
+export const PromptText = styled.span`
+  font-weight: var(--fw-light);
+  font-size: var(--fs-h5);
+  color: var(--color-submain);
+`;
+
 export const Btn = styled.button`
   width: 100%;
   padding: 10px 32px;
@@ -119,7 +151,7 @@ export const Btn = styled.button`
   font-weight: var(--fw-medium);
   font-size: var(--fs-h3);
   color: var(--color-second-text);
-  margin-top: 20px;
+  margin-top: 36px;
 
   &:hover {
     background-color: var(--color-section);
